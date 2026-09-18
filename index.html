@@ -1,0 +1,338 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>María José Menéndez — Founder, Tech Studio</title><meta name="description" content="Business systems, digital products and operational tools. María José Menéndez, founder of Tech Studio — strategy, UX/UI and execution."><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet"><style>
+  :root{
+    --paper:#FBFAF8;        /* lighter warm off-white */
+    --ink:#161310;          /* near-black */
+    --ink-soft:#56514A;     /* muted body */
+    --line:#EAE6DE;         /* hairline / borders */
+    --card:#FFFFFF;
+
+    /* capability accents */
+    --pm:#2D4CC8;           /* cobalt — project mgmt */
+    --ux:#E0468A;           /* hot pink — UX */
+    --ops:#1F9E7A;          /* green — operations */
+    --bd:#F0820C;           /* tangerine — business dev */
+    --mkt:#7A3FD6;          /* purple — marketing */
+
+    --accent-line:#161310;  /* neutral structural accent (was orange) */
+
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation:none !important;transition:none !important}
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,244,239,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .logo b{color:var(--ink);font-weight:700}
+  .navlinks{display:flex;gap:26px;align-items:center}
+  .navlinks a{
+    font-size:14px;color:var(--ink-soft);text-decoration:none;font-weight:500;
+    transition:color .2s;
+  }
+  .navlinks a:hover{color:var(--ink)}
+  .nav-cv{
+    border:1.5px solid var(--ink);border-radius:40px;padding:8px 18px !important;
+    color:var(--ink) !important;
+  }
+  .nav-cv:hover{background:var(--ink);color:var(--paper) !important}
+  @media(max-width:720px){.navlinks a:not(.nav-cv){display:none}}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:84px 0 70px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:48px;align-items:center}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+
+  .eyebrow{
+    font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.04em;
+    color:var(--ink-soft);text-transform:uppercase;margin-bottom:22px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--pm)}
+
+  h1.name{
+    font-family:'Inter',sans-serif;font-weight:800;
+    font-size:clamp(46px,7vw,82px);line-height:.98;letter-spacing:-.035em;
+    margin-bottom:26px;
+  }
+  h1.name .l2{display:block;color:var(--ink)}
+  .tagline{
+    font-family:'Inter',sans-serif;font-style:normal;font-weight:500;
+    font-size:clamp(20px,2.6vw,28px);line-height:1.3;color:var(--ink);
+    margin-bottom:24px;max-width:34ch;letter-spacing:-.01em;
+  }
+  .tagline em{font-style:normal;font-weight:600;background:linear-gradient(transparent 60%,rgba(45,76,200,.22) 0);padding:0 3px}
+  .hero-body{font-size:17px;color:var(--ink-soft);max-width:46ch;margin-bottom:34px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .btn-primary{
+    background:var(--ink);color:var(--paper);text-decoration:none;
+    padding:15px 26px;border-radius:44px;font-weight:600;font-size:15px;
+    display:inline-flex;align-items:center;gap:10px;transition:transform .2s, background .2s;
+  }
+  .btn-primary:hover{transform:translateY(-2px);background:var(--ink-soft)}
+  .scroll-hint{
+    font-size:14px;color:var(--ink-soft);text-decoration:none;font-weight:500;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .scroll-hint .arrow{display:inline-block;animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+  /* portrait */
+  .portrait-wrap{position:relative;justify-self:center}
+  .portrait{
+    width:min(330px,78vw);aspect-ratio:1/1;border-radius:24px;
+    object-fit:cover;position:relative;z-index:2;
+    border:3px solid var(--ink);
+  }
+  .blob{
+    position:absolute;inset:-18px -18px auto auto;width:120px;height:120px;
+    background:var(--ux);border-radius:50%;z-index:1;opacity:.9;
+  }
+  .blob.two{inset:auto auto -14px -20px;width:90px;height:90px;background:var(--pm);}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:74px 0;border-top:1px solid var(--line)}
+  .sec-eyebrow{
+    font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--pm);margin-bottom:14px;
+  }
+  h2{
+    font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.03em;
+    font-size:clamp(30px,4.4vw,44px);line-height:1.06;margin-bottom:26px;
+  }
+
+  /* ---------- WHO I AM ---------- */
+  .who-inner{max-width:820px}
+  .who-inner .sec-eyebrow{margin-bottom:18px}
+  .who p{font-size:19px;color:var(--ink-soft);margin-bottom:20px;max-width:60ch}
+  .who p:first-child{
+    font-family:'Inter',sans-serif;font-size:clamp(23px,3vw,30px);
+    color:var(--ink);font-weight:500;line-height:1.3;
+  }
+  .who p strong{color:var(--pm);font-weight:600}
+
+  /* ---------- WORK / FILTER ---------- */
+  .filter-intro{font-size:17px;color:var(--ink-soft);margin-bottom:26px;max-width:50ch}
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+  .chip{
+    font-family:'Inter',sans-serif;font-weight:600;font-size:14px;
+    border:1.5px solid var(--ink);background:transparent;color:var(--ink);
+    border-radius:40px;padding:9px 18px;cursor:pointer;transition:all .18s;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .chip .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .chip:hover{transform:translateY(-2px)}
+  .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .chip[data-f="all"][aria-pressed="true"]{background:var(--ink)}
+  .chip[data-f="pm"][aria-pressed="true"]{background:var(--pm);border-color:var(--pm)}
+  .chip[data-f="ux"][aria-pressed="true"]{background:var(--ux);border-color:var(--ux)}
+  .chip[data-f="ops"][aria-pressed="true"]{background:var(--ops);border-color:var(--ops)}
+  .chip[data-f="bd"][aria-pressed="true"]{background:var(--bd);border-color:var(--bd)}
+  .chip[data-f="mkt"][aria-pressed="true"]{background:var(--mkt);border-color:var(--mkt)}
+
+  /* capability blurb that shows based on filter */
+  .blurb{
+    border-left:3px solid var(--bd);padding:4px 0 4px 22px;margin-bottom:38px;
+    max-width:62ch;display:none;
+  }
+  .blurb.active{display:block;animation:fade .35s ease}
+  .blurb h3{font-family:'Inter',sans-serif;font-size:22px;font-weight:600;margin-bottom:8px}
+  .blurb p{font-size:16.5px;color:var(--ink-soft)}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* project cards */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:760px){.cards{grid-template-columns:1fr}}
+  .card{
+    background:var(--card);border:1.5px solid var(--ink);border-radius:18px;
+    padding:26px 24px 24px;position:relative;overflow:hidden;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:5px;background:var(--accent,var(--ink))}
+  .card:hover{transform:translateY(-4px);box-shadow:6px 8px 0 var(--ink)}
+  .card.hide{display:none}
+  .card .ctitle{font-family:'Inter',sans-serif;font-size:23px;font-weight:600;margin-bottom:6px;line-height:1.1}
+  .card .csub{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--ink-soft);margin-bottom:14px}
+  .card .cbody{font-size:15.5px;color:var(--ink-soft);margin-bottom:18px}
+  .tags{display:flex;flex-wrap:wrap;gap:7px}
+  .tag{font-family:'DM Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.03em;
+    padding:4px 10px;border-radius:30px;font-weight:500;color:#fff}
+  .tag.pm{background:var(--pm)}.tag.ux{background:var(--ux)}.tag.ops{background:var(--ops)}
+  .tag.bd{background:var(--bd)}.tag.mkt{background:var(--mkt)}
+
+  /* ---------- THINGS I'VE BUILT ---------- */
+  .built{background:var(--ink);color:var(--paper);border-radius:0}
+  .built .sec-eyebrow{color:#8FB0FF}
+  .built h2{color:var(--paper)}
+  .built-lead{font-family:'Inter',sans-serif;font-size:clamp(22px,3vw,30px);font-weight:500;
+    line-height:1.3;max-width:24ch;margin-bottom:14px}
+  .built-sub{font-size:17px;color:#C9C2B8;max-width:52ch;margin-bottom:42px}
+  .builds{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:760px){.builds{grid-template-columns:1fr}}
+  /* full-width feature builds with carousel */
+  .feature-build{
+    background:#211D18;border:1px solid #38322A;border-radius:18px;overflow:hidden;
+    display:grid;grid-template-columns:1.25fr .75fr;margin-bottom:20px;
+    transition:border-color .2s;
+  }
+  .feature-build:hover{border-color:var(--pm)}
+  @media(max-width:760px){.feature-build{grid-template-columns:1fr}}
+  .feature-build .thumb{position:relative;overflow:hidden;background:#2C2720;aspect-ratio:auto;min-height:340px;height:100%;border-bottom:none;border-right:1px solid #38322A}
+  @media(max-width:760px){.feature-build .thumb{border-right:none;border-bottom:1px solid #38322A;min-height:240px}}
+  .feature-build .bbody{padding:30px 30px;display:flex;flex-direction:column;justify-content:center}
+  .feature-build .btitle{font-size:24px;margin-bottom:12px}
+  .feature-build .btext{font-size:15.5px;line-height:1.6;margin-bottom:16px}
+  .feature-build .ftags{display:flex;flex-wrap:wrap;gap:7px}
+  .feature-build .ftag{font-family:'DM Mono',monospace;font-size:11px;color:#8FB0FF;
+    border:1px solid #2D4CC8;border-radius:30px;padding:3px 10px}
+  .build{
+    background:#211D18;border:1px solid #38322A;border-radius:16px;overflow:hidden;
+    transition:transform .2s,border-color .2s;
+  }
+  .build:hover{transform:translateY(-4px);border-color:var(--pm)}
+  .build .thumb{
+    aspect-ratio:16/10;background:#2C2720;display:flex;align-items:center;justify-content:center;
+    border-bottom:1px solid #38322A;position:relative;overflow:hidden;
+  }
+  .build .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .build .thumb .ph{font-family:'DM Mono',monospace;font-size:12.5px;color:#7C7468;text-align:center;padding:0 18px}
+  /* designed icon thumbnails */
+  .icon-thumb{display:flex;align-items:center;justify-content:center}
+  .calc-bg{background:linear-gradient(135deg,#1d2a52 0%,#2C2720 100%)}
+  .wa-bg{background:linear-gradient(135deg,#143b2e 0%,#2C2720 100%)}
+  .icon-art{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .icon-art svg{width:54px;height:54px}
+  .calc-bg .icon-art{color:#8FB0FF}
+  .wa-bg .icon-art{color:#4ade9b}
+  .icon-art span{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.03em;color:rgba(255,255,255,.55)}
+  /* carousel */
+  .carousel{position:absolute;inset:0;width:100%;height:100%}
+  .carousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .4s ease;pointer-events:none}
+  .carousel .slide.on{opacity:1;pointer-events:auto}
+  .carousel .slide img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .carousel .nav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+    width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+    background:rgba(255,255,255,.92);color:#161310;
+    display:flex;align-items:center;justify-content:center;font-size:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);transition:background .2s,transform .2s}
+  .carousel .nav:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+  .carousel .nav.prev{left:10px}
+  .carousel .nav.next{right:10px}
+  .carousel .dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+    display:flex;gap:6px;z-index:5}
+  .carousel .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);
+    display:block;cursor:pointer;transition:background .3s,width .3s}
+  .carousel .dots i.on{background:#fff;width:18px;border-radius:4px}
+  .carousel .count{position:absolute;top:12px;right:12px;z-index:5;
+    font-family:'DM Mono',monospace;font-size:11px;background:rgba(22,19,16,.7);color:#fff;
+    padding:3px 9px;border-radius:30px}
+  .build .pill{position:absolute;top:12px;left:12px;z-index:4;font-family:'DM Mono',monospace;font-size:10.5px;
+    text-transform:uppercase;letter-spacing:.04em;padding:4px 10px;border-radius:30px;font-weight:500}
+  .pill.live{background:#1F9E7A;color:#fff}
+  .pill.soon{background:#1d2a52;color:#8FB0FF;border:1px solid #2D4CC8}
+  .build .bbody{padding:20px 22px 22px}
+  .build .btitle{font-family:'Inter',sans-serif;font-size:20px;font-weight:600;margin-bottom:8px;color:var(--paper)}
+  .build .btext{font-size:14.5px;color:#C9C2B8}
+  .toolrow{margin-top:38px;font-family:'DM Mono',monospace;font-size:13.5px;color:#C9C2B8;
+    display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .toolrow b{color:#8FB0FF;font-weight:500;margin-right:4px}
+  .toolrow span{background:#211D18;border:1px solid #38322A;border-radius:30px;padding:5px 13px}
+  /* tech studio band */
+  .studio-band{margin-top:46px;background:#211D18;border:1px solid #38322A;border-radius:18px;
+    padding:34px 34px;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+  @media(max-width:680px){.studio-band{grid-template-columns:1fr;gap:20px;text-align:center;justify-items:center}}
+  .studio-logo{width:120px;height:120px;background:#fff;border-radius:20px;display:flex;
+    align-items:center;justify-content:center;padding:14px;flex-shrink:0}
+  .studio-logo img{width:100%;height:100%;object-fit:contain}
+  .studio-tag{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;
+    color:#8FB0FF;margin-bottom:10px}
+  .studio-band h3{font-family:'Inter',sans-serif;font-size:24px;font-weight:700;color:var(--paper);margin-bottom:10px;letter-spacing:-.02em}
+  .studio-band p{font-size:15.5px;color:#C9C2B8;line-height:1.6;max-width:60ch}
+  .studio-band .founder{color:#8FB0FF;font-weight:500}
+
+  /* ---------- EARLY DAYS ---------- */
+  .early-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+  @media(max-width:760px){.early-grid{grid-template-columns:1fr;gap:24px}}
+  .early h2 span{color:var(--pm)}
+  .early p{font-size:17px;color:var(--ink-soft);margin-bottom:18px;max-width:54ch}
+  .early p strong{color:var(--pm);font-weight:600}
+  .early-pull{
+    border:1.5px solid var(--ink);border-radius:18px;padding:28px;background:var(--card);
+    box-shadow:6px 6px 0 var(--pm);
+  }
+  .early-pull .big{font-family:'Inter',sans-serif;font-size:54px;font-weight:800;line-height:1;color:var(--pm)}
+  .early-pull .big sub{font-size:18px;font-weight:500;vertical-align:baseline}
+  .early-pull .lbl{font-family:'DM Mono',monospace;font-size:13px;color:var(--ink-soft);margin-top:6px;text-transform:uppercase;letter-spacing:.03em}
+  .early-pull hr{border:none;border-top:1px solid var(--line);margin:22px 0}
+  .early-pull .note{font-size:15px;color:var(--ink-soft)}
+  .early-pull .note b{color:var(--ink)}
+
+  /* ---------- CONTACT ---------- */
+  .contact{text-align:center;border-top:1px solid var(--line)}
+  .contact h2{margin-bottom:14px}
+  .contact p{font-size:18px;color:var(--ink-soft);margin-bottom:32px}
+  .contact-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cbtn{
+    text-decoration:none;font-weight:600;font-size:15px;padding:14px 26px;border-radius:44px;
+    border:1.5px solid var(--ink);color:var(--ink);transition:all .2s;
+  }
+  .cbtn:hover{transform:translateY(-2px)}
+  .cbtn.fill{background:var(--ink);color:var(--paper)}
+  .cbtn.fill:hover{background:var(--ink-soft);border-color:var(--ink-soft)}
+  .cbtn.blue{background:var(--pm);color:#fff;border-color:var(--pm)}
+  .cbtn.blue:hover{background:#243faf;border-color:#243faf}
+  .cbtn.blue-outline{border-color:var(--pm);color:var(--pm)}
+  .cbtn.blue-outline:hover{background:var(--pm);color:#fff}
+  footer{padding:34px 0;text-align:center;font-family:'DM Mono',monospace;font-size:12.5px;color:var(--ink-soft);border-top:1px solid var(--line)}
+ 
+section{scroll-margin-top:80px}.built .chip{color:var(--paper);border-color:#777}.built .chip[aria-pressed=true]{background:var(--paper);color:var(--ink)}
+.project{background:#211D18;border:1px solid #51483e;border-radius:18px;overflow:hidden}.project[hidden]{display:none}.project img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}.project .copy{padding:28px}.project h3{font-size:25px;line-height:1.2;margin:10px 0 14px}.project p{color:#d4cec5;margin-bottom:18px}.project .label{font:12px 'DM Mono',monospace;color:#a9bfff;text-transform:uppercase}.project summary{cursor:pointer;font-weight:600;padding:14px 0;color:#fff}.project details{border-top:1px solid #51483e}.project details p{font-size:15px;margin-top:14px}.project details img{margin:14px 0;object-fit:contain;aspect-ratio:auto}.wordmark{min-height:210px;padding:36px;display:flex;align-items:center;font-size:clamp(30px,4vw,50px);font-weight:800;letter-spacing:-.04em;background:#283557;color:#e9eeff}.project:nth-child(4) .wordmark{background:#322637}.project:nth-child(5) .wordmark{background:#193e34}.project:nth-child(6) .wordmark{background:#51332e}.built .filter-intro{color:#d4cec5;max-width:65ch}.studio-band{margin:0}.studio-band a{color:#b9cbff}.education{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}.education div{padding:22px;border:1px solid var(--line);border-radius:14px}.education p{font-size:15px;margin:8px 0}.lens-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.lens-grid h3{margin-bottom:12px}.lens-grid p{color:var(--ink-soft)}.project-count{font:12px 'DM Mono',monospace;color:#ccc;margin:-20px 0 24px}:focus-visible{outline:3px solid #E0468A;outline-offset:5px}.skip{position:fixed;top:-100px;left:20px;z-index:100;background:white;padding:12px}.skip:focus{top:10px}@media(max-width:760px){.education,.lens-grid{grid-template-columns:1fr}.wrap{padding:0 20px}header.hero{padding:45px 0}.portrait{width:240px}.navlinks{gap:10px}.logo{font-size:14px}section{padding:50px 0}}
+ 
+.filters{gap:12px;flex-wrap:wrap}.built .chip{font-family:'Poppins',Inter,sans-serif!important;font-size:14px!important;font-weight:700!important;letter-spacing:-.01em;padding:12px 18px!important;border-radius:999px!important;transition:transform .18s ease,background .18s ease,border-color .18s ease}.built .chip:hover{transform:translateY(-2px);border-color:#a9bfff}.project .access{font-family:'Poppins',Inter,sans-serif!important;font-size:12px!important;font-weight:700!important;letter-spacing:.01em;margin:8px 0 18px!important;color:#f4efe8;background:rgba(169,191,255,.12);border-color:#8fa5ff}.project h3{font-family:'Poppins',Inter,sans-serif;letter-spacing:-.03em}.studio-band-text{display:block!important;padding:42px!important}.studio-band-text h2{font-family:'Poppins',Inter,sans-serif;letter-spacing:-.04em}.studio-points{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.studio-points span{font-family:'Poppins',Inter,sans-serif;font-weight:700;font-size:13px;color:#161310;background:#b9cbff;border-radius:999px;padding:10px 14px}.lens-grid div,.education div{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease}.lens-grid div:hover,.education div:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(22,19,16,.10)}.education div:nth-child(1){background:#fff4df;border-color:#f4c46b}.education div:nth-child(2){background:#eef3ff;border-color:#9fb7ff}.education div:nth-child(3){background:#f5ecff;border-color:#c9a5ff}.education h3{font-family:'Poppins',Inter,sans-serif;letter-spacing:-.03em}.education div:before{display:block;font-family:'DM Mono',monospace;font-size:12px;color:#7a6f63;margin-bottom:14px}.education div:nth-child(1):before{content:'BUSINESS'}.education div:nth-child(2):before{content:'DESIGN'}.education div:nth-child(3):before{content:'MARKETING'}.project .copy > .label:first-child,.dialog-content .label{font-family:'Poppins',Inter,sans-serif!important;font-size:13px!important;font-weight:800!important;letter-spacing:.08em!important;color:#b9cbff!important}.project .copy > p.label{font-family:'DM Mono',monospace!important;color:#d9cbb8!important;letter-spacing:.04em!important}.studio-heading{display:flex;align-items:center;gap:18px;margin:6px 0 18px}.studio-heading img{width:86px;height:86px;object-fit:contain;border-radius:18px;background:#f7f4ef;padding:12px;box-shadow:0 16px 34px rgba(0,0,0,.18)}.studio-heading h2{margin:0!important}.education{align-items:stretch}.education div{position:relative;overflow:hidden;background:#f7f4ef!important;border:0!important;box-shadow:inset 0 0 0 1px rgba(22,19,16,.08),0 14px 34px rgba(22,19,16,.06)}.education div:after{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:#b9cbff}.education div:nth-child(1):after{background:#f4b64c}.education div:nth-child(2):after{background:#7fa1ff}.education div:nth-child(3):after{background:#c29aff}.education div:before{display:inline-flex!important;align-items:center;border-radius:999px;padding:6px 10px;background:#211d18;color:#f7f4ef!important;margin-bottom:18px!important}.education h3{font-size:22px;margin-bottom:12px}.education p{color:#5d554d}.education div:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 24px 52px rgba(22,19,16,.12)}@media(max-width:760px){.studio-heading{align-items:flex-start}.studio-heading img{width:70px;height:70px}}@media(max-width:760px){.studio-points span{font-size:12px}.built .chip{font-size:13px!important;padding:10px 14px!important}}
+</style><style>.language-switch{display:flex;align-items:center;gap:7px;white-space:nowrap}.navlinks .language-switch a{display:inline-block!important;padding:6px;font-size:13px}.language-switch a[aria-current=page]{font-weight:800;text-decoration:underline;text-underline-offset:5px}@media(max-width:480px){nav .wrap{height:auto;min-height:70px;gap:8px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}.logo{width:100%}.navlinks{flex:1;justify-content:space-between}.nav-cv{white-space:nowrap;font-size:12px!important;padding:7px 10px!important}}</style><link rel="alternate" hreflang="en" href="index.html"><link rel="alternate" hreflang="es" href="es.html"><style>
+.built-lead{max-width:35ch}.project{position:relative;transition:transform .2s,border-color .2s}.project:hover{transform:translateY(-5px);border-color:#a9bfff}.project .project-open{background:none;border:0;border-top:1px solid #51483e;color:white;font:600 16px Inter,sans-serif;padding:18px 0 0;width:100%;text-align:left;cursor:pointer}.project-open:after{content:"";position:absolute;inset:0}.project .copy{padding-bottom:24px}.project .access{display:inline-block;font:11px 'DM Mono',monospace;border:1px solid #786d61;border-radius:20px;padding:5px 10px;color:#e9e0d5;margin-bottom:15px}.project-dialog{width:min(1280px,96vw);height:94dvh;max-height:94dvh;max-width:96vw;border:1px solid #5e554c;border-radius:20px;background:#fbfaf8;color:#161310;margin:auto;padding:0;overflow:auto}.project-dialog::backdrop{background:rgba(10,9,8,.85);backdrop-filter:blur(8px)}.dialog-bar{position:sticky;top:0;z-index:2;background:#fbfaf8;border-bottom:1px solid #ddd5ca;padding:14px 28px;display:flex;justify-content:space-between;align-items:center}.dialog-close,.gallery-controls button{border:1px solid #161310;background:transparent;border-radius:30px;padding:10px 17px;font:600 14px Inter,sans-serif;cursor:pointer}.dialog-content{padding:36px 48px 60px}.dialog-content h2{max-width:24ch;margin:12px 0 22px;font-size:clamp(30px,4vw,52px)}.dialog-content .label{font:13px 'DM Mono',monospace;color:#2d4cc8}.dialog-description{font-size:19px;max-width:75ch;color:#56514a;margin:18px 0 24px}.dialog-notice{padding:16px 20px;background:#ede9e2;border-radius:12px;margin:24px 0;font-size:14px}.gallery{margin-top:28px;background:#e8e4dc;border-radius:14px;padding:14px}.gallery img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain}.gallery-controls{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px}.gallery-controls a{color:#161310}.project-links{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.project-links a{color:#fff;background:#161310;padding:12px 20px;border-radius:30px;text-decoration:none}.no-gallery{padding:32px;border:1px solid #d3cbbf;border-radius:14px;color:#56514a}.project-dialog .wordmark{border-radius:14px;margin-top:24px;min-height:180px}@media(max-width:600px){.project-dialog{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0}.dialog-content{padding:24px 20px}.dialog-bar{padding:12px 20px}.gallery{padding:8px}.gallery-controls{flex-wrap:wrap}}
+</style><style>.video-cover{position:relative;background:#151515;aspect-ratio:16/10;overflow:hidden}.video-cover video{width:100%;height:100%;object-fit:contain}.video-cover span{position:absolute;bottom:16px;left:18px;background:#161310;color:white;padding:8px 14px;border-radius:20px;font-size:13px}.project-video{margin-top:28px}.project-video video{width:100%;max-height:72vh;background:#111;border-radius:12px}.project-video figcaption{font-size:14px;color:#56514a;margin-top:10px}.studio-capture{width:100%;height:auto;display:block;border-radius:12px;margin:24px 0}.techstudio-card-logo{background:#e8e4dc;object-fit:cover!important;object-position:top center!important;padding:0!important}.studio-logo-large{width:min(520px,100%);height:auto;display:block;border-radius:12px;margin:24px 0;background:#f7f4ef}</style><style>.project > img,.project .video-cover{aspect-ratio:16/9;background:#e8e4dc}.project > img,.project .video-cover img{object-fit:contain;object-position:center;width:100%;height:auto;aspect-ratio:16/9}.project .video-cover{overflow:hidden}.video-cover span{bottom:8px;left:8px;font-size:11px;padding:5px 10px}.project > img{padding:8px}.project .video-cover img{padding:8px}.project-video video{object-fit:contain}</style><style>.project .copy > .label:first-child,.dialog-content .label{font-family:'Poppins',Inter,sans-serif!important;font-size:13px!important;font-weight:800!important;letter-spacing:.08em!important;color:#b9cbff!important}.project .copy > p.label{font-family:'DM Mono',monospace!important;color:#d9cbb8!important;letter-spacing:.04em!important}.studio-heading{display:flex!important;align-items:center!important;gap:18px!important;margin:6px 0 18px!important}.studio-heading img{width:112px!important;height:112px!important;object-fit:contain!important;border-radius:22px!important;background:#f7f4ef!important;padding:14px!important;box-shadow:0 18px 38px rgba(0,0,0,.16)!important}.studio-heading h2{margin:0!important}.education div{position:relative!important;overflow:hidden!important;background:#f7f4ef!important;border:0!important;box-shadow:inset 0 0 0 1px rgba(22,19,16,.08),0 14px 34px rgba(22,19,16,.06)!important}.education div:after{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:#b9cbff}.education div:nth-child(1):after{background:#f4b64c}.education div:nth-child(2):after{background:#7fa1ff}.education div:nth-child(3):after{background:#c29aff}.education div:before{display:inline-flex!important;align-items:center!important;border-radius:999px!important;padding:6px 10px!important;background:#211d18!important;color:#f7f4ef!important;margin-bottom:18px!important}.education h3{font-size:22px!important;margin-bottom:12px!important}.education p{color:#5d554d!important}.education div:hover{transform:translateY(-6px) rotate(-.4deg)!important;box-shadow:0 24px 52px rgba(22,19,16,.12)!important}@media(max-width:760px){.studio-heading{align-items:flex-start!important}.studio-heading img{width:86px!important;height:86px!important}}</style><style>.studio-band-text{display:block!important;grid-template-columns:none!important}.studio-band{grid-template-columns:minmax(220px,320px) 1fr!important}.studio-logo.studio-preview{width:100%!important;height:auto!important;aspect-ratio:16/9!important;padding:0!important;overflow:hidden;background:#e8e4dc!important}.studio-logo.studio-preview img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:top center!important}@media(max-width:760px){.studio-band{grid-template-columns:1fr!important}.studio-logo.studio-preview{max-width:100%!important}}</style><style>
+:root{--ts-blue:#0b7cff;--ts-lime:#caff8f;--ts-cream:#fbfaf4;--ts-ink:#332c2c;--ts-soft:#eef5ff}
+#built.built{background:linear-gradient(135deg,#fbfaf4 0%,#f5f9ee 46%,#eef5ff 100%)!important;color:#332c2c!important}
+#built .sec-eyebrow{color:#0b7cff!important}#built h2,#built .built-lead{color:#332c2c!important}#built .filter-intro,#built .project-count{color:#5f5a52!important}
+#built .chip{background:#ffffff!important;color:#332c2c!important;border-color:#d8ded2!important;box-shadow:0 8px 22px rgba(51,44,44,.05)!important}#built .chip[aria-pressed=true]{background:#0b7cff!important;color:#fff!important;border-color:#0b7cff!important}#built .chip:hover{border-color:#0b7cff!important;box-shadow:0 12px 26px rgba(11,124,255,.16)!important}
+#built .project{background:#303747!important;border-color:#63708b!important;box-shadow:0 22px 50px rgba(25,34,52,.16)!important}#built .project:hover{border-color:#9fb7ff!important;box-shadow:0 28px 65px rgba(25,34,52,.24)!important}
+#built .project h3{color:#fffdf6!important;text-shadow:0 1px 0 rgba(0,0,0,.18)!important}#built .project .copy>p{color:#e4e6ef!important}#built .project .copy>.label:first-child{color:#dfe7ff!important;text-shadow:none!important}#built .project .access{background:rgba(255,253,246,.94)!important;border-color:rgba(202,255,143,.85)!important;color:#253149!important;box-shadow:inset 0 -2px 0 rgba(202,255,143,.55),0 8px 18px rgba(0,0,0,.08)!important}#built .project .copy>p.label{color:#dce5d0!important}#built .project .project-open{color:#fffdf6!important;border-top-color:rgba(255,253,246,.22)!important}
+#studio.built{background:linear-gradient(135deg,#3a3f48 0%,#343943 52%,#424854 100%)!important}#studio .studio-band-text{background:linear-gradient(135deg,#fbfaf4 0%,#f5ffe8 100%)!important;color:#332c2c!important;border-color:rgba(11,124,255,.18)!important;box-shadow:0 24px 65px rgba(11,124,255,.12)!important}#studio .studio-tag{color:#0b7cff!important}#studio .studio-band-text p{color:#463f3b!important}#studio .studio-points span{background:#0b7cff!important;color:#fff!important}#studio .studio-points span:nth-child(2){background:#caff8f!important;color:#332c2c!important}#studio .studio-points span:nth-child(3){background:#e9f2ff!important;color:#0b4db8!important}#studio .studio-heading img{width:124px!important;height:124px!important;background:#fff!important;border:1px solid #edf0e9!important;box-shadow:0 18px 42px rgba(11,124,255,.14)!important}#studio a{color:#0b4db8!important}
+#work .lens-grid{position:relative;display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:18px!important;margin-top:34px!important}#work .lens-grid:before{content:'';position:absolute;left:10%;right:10%;top:38px;height:2px;background:linear-gradient(90deg,#0b7cff,#caff8f,#0b7cff);opacity:.55}#work .lens-grid div{position:relative;background:#fff!important;border:1px solid #e1ddd5!important;border-radius:22px!important;padding:30px 26px 28px!important;box-shadow:0 18px 44px rgba(22,19,16,.07)!important}#work .lens-grid div:before{content:attr(data-step);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#0b7cff;color:#fff;font:800 15px 'Poppins',Inter,sans-serif;margin-bottom:24px;box-shadow:0 10px 24px rgba(11,124,255,.22)}#work .lens-grid div:nth-child(2):before{background:#caff8f;color:#332c2c}#work .lens-grid div:nth-child(3):before{background:#332c2c}#work .lens-grid h3{font-family:'Poppins',Inter,sans-serif!important;font-size:22px!important;letter-spacing:-.03em!important;margin-bottom:12px!important}#work .lens-grid p{color:#5d554d!important;line-height:1.65!important}
+.education div{background:#fff!important;border:1px solid #e1ddd5!important;border-radius:20px!important;box-shadow:0 12px 34px rgba(22,19,16,.06)!important}.education div:before{display:block!important;background:transparent!important;color:#0b7cff!important;padding:0!important;border-radius:0!important;font-family:'Poppins',Inter,sans-serif!important;font-weight:800!important;letter-spacing:.08em!important}.education div:nth-child(1):before{color:#7a5a12!important}.education div:nth-child(2):before{color:#0b7cff!important}.education div:nth-child(3):before{color:#6a9e1e!important}.education div:after{background:#caff8f!important}.education div:nth-child(2):after{background:#0b7cff!important}.education div:nth-child(3):after{background:#caff8f!important}.education div:hover{transform:translateY(-4px)!important;box-shadow:0 20px 46px rgba(22,19,16,.10)!important}
+@media(max-width:760px){#work .lens-grid{grid-template-columns:1fr!important}#work .lens-grid:before{display:none}}
+</style><style>.whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:80;width:60px;height:60px;border-radius:999px;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 18px 38px rgba(37,211,102,.35),0 8px 18px rgba(0,0,0,.16);transition:transform .18s ease,box-shadow .18s ease}.whatsapp-float:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 22px 44px rgba(37,211,102,.42),0 10px 22px rgba(0,0,0,.18)}.whatsapp-float svg{width:34px;height:34px}@media(max-width:760px){.whatsapp-float{right:18px;bottom:18px;width:54px;height:54px}.whatsapp-float svg{width:30px;height:30px}}</style></head><body>
+<a class="skip" href="#built">Skip to projects</a><nav><div class="wrap"><div class="logo">María José <b>Menéndez</b></div><div class="navlinks"><div class="language-switch" role="group" aria-label="Language"><a href="es.html" lang="es" hreflang="es" aria-label="Español">ES</a><a href="index.html" lang="en" hreflang="en" aria-label="English" aria-current="page">EN</a></div><a href="#built">Things I Build</a><a href="#who">About</a><a href="#studio">Tech Studio</a><a class="nav-cv" href="mailto:info@techstudiosv.com?subject=Tech%20Studio%20collaboration&body=Hi%20Majo%2C%0A%0AI%20want%20to%20collaborate%20or%20I%20have%20a%20project%20we%20could%20work%20on.%0A%0A">Let's collaborate ↗</a></div></div></nav>
+<header class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Founder of Tech Studio</div><h1 class="name">María José<span class="l2">Menéndez</span></h1><p class="tagline">Business systems. Digital products. <em>From strategy to execution.</em></p><p class="hero-body">I connect business thinking, UX/UI and hands-on building to turn complex operations into practical systems. Through Tech Studio, I help businesses understand what needs to work better — and build the tools to make it happen.</p><div class="hero-cta"><a class="btn-primary" href="#built">Explore my work ↗</a><a class="scroll-hint" href="https://techstudiosv.com/" target="_blank" rel="noopener noreferrer">Visit Tech Studio ↗</a></div></div><div class="portrait-wrap"><div class="blob"></div><div class="blob two"></div><img class="portrait" src="photo.png" alt="María José Menéndez"></div></div></header>
+<main><section class="built" id="built"><div class="wrap"><div class="sec-eyebrow">Selected work</div><h2>I plan, design and execute.</h2><p class="built-lead">Digital products and systems<br>built with the business in mind.</p><p class="filter-intro">I work across strategy, UX/UI and implementation to turn business needs into practical digital tools, websites and operating systems.</p><div class="filters" role="group" aria-label="Filter projects"><button class="chip" data-filter="all" aria-pressed="true">All projects</button><button class="chip" data-filter="web" aria-pressed="false">Websites / Web Products</button><button class="chip" data-filter="systems" aria-pressed="false">Business Systems / Internal Tools</button><button class="chip" data-filter="strategy" aria-pressed="false">Strategy / Operations</button></div><p class="project-count" aria-live="polite">11 projects</p><div class="builds"><article data-gallery="[{&quot;src&quot;: &quot;img/coenergy-quote-1.png&quot;, &quot;alt&quot;: &quot;COENERGY \u2014 quoting system dashboard&quot;}, {&quot;src&quot;: &quot;img/coenergy-quote-2.png&quot;, &quot;alt&quot;: &quot;COENERGY \u2014 quote list&quot;}, {&quot;src&quot;: &quot;img/coenergy-quote-3.png&quot;, &quot;alt&quot;: &quot;COENERGY \u2014 service calculator&quot;}, {&quot;src&quot;: &quot;img/coenergy-quote-4.png&quot;, &quot;alt&quot;: &quot;COENERGY \u2014 print-ready quote&quot;}]" class="project" data-category="systems"><div class="video-cover"><img src="img/coenergy-quote-1.png" alt="Product and service calculator walkthrough" loading="lazy"><span>▶ Watch video</span></div><div class="copy"><div class="label">COENERGY</div><span class="access">Internal tool</span><h3>Product & service calculator and quote generator</h3><p>A complex internal calculator and quote generator built for multiple business lines.</p><p class="label">Business systems / Calculator / Quote generation</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Product & service calculator and quote generator">View project ↗</button><template><div class="label">COENERGY · Internal tool</div><h2 id="project-title">Product & service calculator and quote generator</h2><p class="dialog-description">Designed and built a product and service calculator across different lines of business, including more abstract and technically difficult offers such as solar panel systems, biodigesters, lubrication and engineering services. It replaced manual spreadsheet pricing and copy-and-paste quote documents, helping the sales team respond faster during the first stage of the sales process. This is a secure internal tool with no public access linked.</p><p class="dialog-notice">Internal tool: access is restricted to protect company information. This portfolio presents the design and scope of the project.</p><div class="gallery"><img src="img/coenergy-quote-1.png" alt="COENERGY — quoting system dashboard"><div class="gallery-controls"><button class="gallery-prev" aria-label="Previous image">←</button><span class="gallery-count" aria-live="polite"></span><button class="gallery-next" aria-label="Next image">→</button><a class="full-image" target="_blank" rel="noopener" href="img/coenergy-quote-1.png">Open full image ↗</a></div></div></template></div></article><article data-gallery="[{&quot;src&quot;: &quot;img/housebuild-partner-1.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 dashboard&quot;}, {&quot;src&quot;: &quot;img/housebuild-partner-2.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 product management&quot;}, {&quot;src&quot;: &quot;img/housebuild-partner-3.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 analytics&quot;}, {&quot;src&quot;: &quot;img/housebuild-partner-4.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 team management&quot;}, {&quot;src&quot;: &quot;img/housebuild-partner-5.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 brochure management&quot;}, {&quot;src&quot;: &quot;img/housebuild-partner-6.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 create product form&quot;}, {&quot;src&quot;: &quot;img/housebuild-partner-7.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 product details form&quot;}, {&quot;src&quot;: &quot;img/housebuild-partner-8.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 invite user modal&quot;}, {&quot;src&quot;: &quot;img/housebuild-partner-9.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 invitation table&quot;}, {&quot;src&quot;: &quot;img/housebuild-partner-10.png&quot;, &quot;alt&quot;: &quot;HouseBuild Partner Program \u2014 invitation status&quot;}, {&quot;src&quot;: &quot;img/housebuild-pm-1.png&quot;, &quot;alt&quot;: &quot;HouseBuild PM \u2014 builder project overview&quot;}, {&quot;src&quot;: &quot;img/housebuild-pm-2.png&quot;, &quot;alt&quot;: &quot;HouseBuild PM \u2014 builder project view&quot;}, {&quot;src&quot;: &quot;img/housebuild-pm-3.png&quot;, &quot;alt&quot;: &quot;HouseBuild PM \u2014 client project view&quot;}, {&quot;src&quot;: &quot;img/housebuild-pm-4.png&quot;, &quot;alt&quot;: &quot;HouseBuild PM \u2014 client milestones&quot;}, {&quot;src&quot;: &quot;img/housebuild-pm-5.png&quot;, &quot;alt&quot;: &quot;HouseBuild PM \u2014 builder milestones&quot;}, {&quot;src&quot;: &quot;img/housebuild-pm-6.png&quot;, &quot;alt&quot;: &quot;HouseBuild PM \u2014 builder milestone detail&quot;}, {&quot;src&quot;: &quot;img/housebuild-pm-7.png&quot;, &quot;alt&quot;: &quot;HouseBuild PM \u2014 builder milestones list&quot;}, {&quot;src&quot;: &quot;img/housebuild-pm-8.png&quot;, &quot;alt&quot;: &quot;HouseBuild PM \u2014 builder job information&quot;}]" class="project" data-category="web strategy"><img src="img/housebuild-pm-1.png" alt="HouseBuild PM project overview" loading="lazy"><div class="copy"><div class="label">HouseBuild / HouseBuildPM</div><span class="access">Web project</span><h3>HouseBuild Partner Program & PM</h3><p>Marketplace for suppliers and project management tool for construction projects inside the HouseBuild ecosystem.</p><p class="label">Strategy / Product testing / Execution</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: HouseBuild Partner Program & PM">View project ↗</button><template><div class="label">HouseBuild / HouseBuildPM · Web project</div><h2 id="project-title">HouseBuild Partner Program & PM</h2><p class="dialog-description">Worked across two areas of the HouseBuild ecosystem. For the Partner Program, I collaborated on UX/UI design and project management for a marketplace-style space where construction product and service businesses can create and manage their own dashboard. For HouseBuild PM, I supported project management and design tweaks for a construction project management tool currently in development and being prepared for deployment.</p><div class="project-links"><a href="https://www.housebuild.com/" target="_blank" rel="noopener noreferrer">Visit HouseBuild ↗</a><a href="https://housebuildpm.com/" target="_blank" rel="noopener noreferrer">Visit HouseBuildPM ↗</a></div><div class="gallery"><img src="img/housebuild-partner-1.png" alt="HouseBuild Partner Program — dashboard"><div class="gallery-controls"><button class="gallery-prev" aria-label="Previous image">←</button><span class="gallery-count" aria-live="polite"></span><button class="gallery-next" aria-label="Next image">→</button><a class="full-image" target="_blank" rel="noopener" href="img/housebuild-partner-1.png">Open full image ↗</a></div></div></template></div></article><article data-gallery="[]" class="project" data-category="web strategy"><img class="techstudio-card-logo" src="img/techstudio-website-poster.jpg" alt="Tech Studio website preview" loading="lazy"><div class="copy"><div class="label">Tech Studio</div><span class="access">Web project</span><h3>Business Systems Studio website</h3><p>My own website for communicating Tech Studio’s business, strategy, design and implementation process.</p><p class="label">Founder / Business strategy / UX/UI / AI</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Business Systems Studio website">View project ↗</button><template><div class="label">Tech Studio · Web project</div><h2 id="project-title">Business Systems Studio website</h2><p class="dialog-description">I founded Tech Studio to help businesses understand operational bottlenecks and turn them into practical systems. This website explains the way I combine business strategy, AI, UX/UI design and smart implementation to help clients move from clarity to a working system.</p><div class="project-links"><a href="https://techstudiosv.com/" target="_blank" rel="noopener noreferrer">Visit Tech Studio ↗</a></div><img class="studio-capture" src="img/techstudio-website-poster.jpg" alt="Tech Studio website preview" loading="lazy"></template></div></article><article data-gallery="[{&quot;src&quot;: &quot;img/coenergy_1.jpg&quot;, &quot;alt&quot;: &quot;COENERGY \u2014 screenshot 1&quot;}, {&quot;src&quot;: &quot;img/coenergy_2.jpg&quot;, &quot;alt&quot;: &quot;COENERGY \u2014 screenshot 2&quot;}, {&quot;src&quot;: &quot;img/coenergy_3.jpg&quot;, &quot;alt&quot;: &quot;COENERGY \u2014 screenshot 3&quot;}, {&quot;src&quot;: &quot;img/coenergy_4.jpg&quot;, &quot;alt&quot;: &quot;COENERGY \u2014 screenshot 4&quot;}, {&quot;src&quot;: &quot;img/coenergy_5.jpg&quot;, &quot;alt&quot;: &quot;COENERGY \u2014 screenshot 5&quot;}]" class="project" data-category="systems strategy"><img src="img/coenergy_1.jpg" alt="COENERGY — Executive sales performance dashboard" loading="lazy"><div class="copy"><div class="label">COENERGY</div><span class="access">Internal tool</span><h3>Executive sales performance dashboard</h3><p>An executive internal tool for tracking sales progress, goals and targets across business areas.</p><p class="label">Dashboard design / Reporting / Operations</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Executive sales performance dashboard">View project ↗</button><template><div class="label">COENERGY · Internal tool</div><h2 id="project-title">Executive sales performance dashboard</h2><p class="dialog-description">Designed a dashboard that brings together progress, targets and performance by business area, so leadership can see what each line should hit and how teams are tracking against their goals.</p><p class="dialog-notice">Internal tool: access is restricted to protect company information. This portfolio presents the design and scope of the project.</p><div class="gallery"><img src="img/coenergy_1.jpg" alt="COENERGY — screenshot 1"><div class="gallery-controls"><button class="gallery-prev" aria-label="Previous image">←</button><span class="gallery-count" aria-live="polite"></span><button class="gallery-next" aria-label="Next image">→</button><a class="full-image" target="_blank" rel="noopener" href="img/coenergy_1.jpg">Open full image ↗</a></div></div></template></div></article><article data-gallery="[{&quot;src&quot;: &quot;img/irevise-1.png&quot;, &quot;alt&quot;: &quot;iRevise landing page&quot;}, {&quot;src&quot;: &quot;img/irevise-2.png&quot;, &quot;alt&quot;: &quot;iRevise dashboard&quot;}, {&quot;src&quot;: &quot;img/irevise-3.png&quot;, &quot;alt&quot;: &quot;iRevise tools dashboard&quot;}, {&quot;src&quot;: &quot;img/irevise-4.png&quot;, &quot;alt&quot;: &quot;iRevise classes page&quot;}, {&quot;src&quot;: &quot;img/irevise-5.png&quot;, &quot;alt&quot;: &quot;iRevise flashcards&quot;}, {&quot;src&quot;: &quot;img/irevise-6.png&quot;, &quot;alt&quot;: &quot;iRevise MCQ practice&quot;}]" class="project" data-category="web strategy"><img src="img/irevise-1.png" alt="iRevise web application walkthrough" loading="lazy"><div class="copy"><div class="label">iRevise</div><span class="access">Web project</span><h3>Educational web application</h3><p>Project management, UX redesign and product improvements for an Irish EdTech platform.</p><p class="label">Project management / UX / AI features</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Educational web application">View project ↗</button><template><div class="label">iRevise · Web project</div><h2 id="project-title">Educational web application</h2><p class="dialog-description">Led project management and UX redesign across onboarding, class creation, new features, AI implementation and product improvements for an educational web application in Ireland.</p><div class="project-links"><a href="https://irevise.com/" target="_blank" rel="noopener noreferrer">Visit iRevise ↗</a></div><div class="gallery"><img src="img/irevise-1.png" alt="iRevise landing page"><div class="gallery-controls"><button class="gallery-prev" aria-label="Previous image">←</button><span class="gallery-count" aria-live="polite"></span><button class="gallery-next" aria-label="Next image">→</button><a class="full-image" target="_blank" rel="noopener" href="img/irevise-1.png">Open full image ↗</a></div></div></template></div></article><article data-gallery="[{&quot;src&quot;: &quot;img/renova_1.jpg&quot;, &quot;alt&quot;: &quot;RENOVA \u2014 screenshot 1&quot;}, {&quot;src&quot;: &quot;img/renova_2.jpg&quot;, &quot;alt&quot;: &quot;RENOVA \u2014 screenshot 2&quot;}, {&quot;src&quot;: &quot;img/renova_3.jpg&quot;, &quot;alt&quot;: &quot;RENOVA \u2014 screenshot 3&quot;}, {&quot;src&quot;: &quot;img/renova_4.jpg&quot;, &quot;alt&quot;: &quot;RENOVA \u2014 screenshot 4&quot;}, {&quot;src&quot;: &quot;img/renova_5.jpg&quot;, &quot;alt&quot;: &quot;RENOVA \u2014 screenshot 5&quot;}, {&quot;src&quot;: &quot;img/renova_6.jpg&quot;, &quot;alt&quot;: &quot;RENOVA \u2014 screenshot 6&quot;}, {&quot;src&quot;: &quot;img/renova_7.jpg&quot;, &quot;alt&quot;: &quot;RENOVA \u2014 screenshot 7&quot;}]" class="project" data-category="web systems"><img src="img/renova_1.jpg" alt="RENOVA — Solar cost calculator" loading="lazy"><div class="copy"><div class="label">RENOVA</div><span class="access">Web project</span><h3>Solar cost calculator</h3><p>A guided web experience that turns an energy bill into a solar system estimate.</p><p class="label">UX / Development / Lead magnet</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Solar cost calculator">View project ↗</button><template><div class="label">RENOVA · Web project</div><h2 id="project-title">Solar cost calculator</h2><p class="dialog-description">Designed, coded and deployed a calculator with a multi-step UX flow that works as a lead magnet for the company, giving useful information to the customer in exchange for data the sales team can follow up on.</p><div class="gallery"><img src="img/renova_1.jpg" alt="RENOVA — screenshot 1"><div class="gallery-controls"><button class="gallery-prev" aria-label="Previous image">←</button><span class="gallery-count" aria-live="polite"></span><button class="gallery-next" aria-label="Next image">→</button><a class="full-image" target="_blank" rel="noopener" href="img/renova_1.jpg">Open full image ↗</a></div></div></template></div></article><article data-gallery="[{&quot;src&quot;: &quot;img/ssm-os-1.png&quot;, &quot;alt&quot;: &quot;Miss Social Studio \u2014 main dashboard&quot;}, {&quot;src&quot;: &quot;img/ssm-os-2.png&quot;, &quot;alt&quot;: &quot;Miss Social Studio \u2014 content calendar&quot;}, {&quot;src&quot;: &quot;img/ssm-os-3.png&quot;, &quot;alt&quot;: &quot;Miss Social Studio \u2014 client profile&quot;}, {&quot;src&quot;: &quot;img/ssm-os-4.png&quot;, &quot;alt&quot;: &quot;Miss Social Studio \u2014 inspiration library&quot;}, {&quot;src&quot;: &quot;img/ssm-os-5.png&quot;, &quot;alt&quot;: &quot;Miss Social Studio \u2014 ideas board&quot;}, {&quot;src&quot;: &quot;img/ssm-os-6.png&quot;, &quot;alt&quot;: &quot;Miss Social Studio \u2014 assisted creative tools&quot;}]" class="project" data-category="systems"><div class="video-cover"><img src="img/ssm-os-1.png" alt="Miss Social Studio system walkthrough" loading="lazy"><span>▶ Watch video</span></div><div class="copy"><div class="label">Miss Social Studio</div><span class="access">Internal · In development</span><h3>Agency operating system</h3><p>An internal operating system in development for managing clients, calendars, tasks, content ideas and creative workflows for a social media agency.</p><p class="label">Strategy / UX/UI / Development</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Agency operating system">View project ↗</button><template><div class="label">Miss Social Studio · Internal · In development</div><h2 id="project-title">Agency operating system</h2><p class="dialog-description">Designed to bring the agency operation into one workspace: dashboard, calendar, client profiles, inspiration, ideas board and assisted creative tools. The local version includes team and client modules; system access remains private.</p><p class="dialog-notice">Internal tool: access is restricted to protect company information. This portfolio presents the design and scope of the project.</p><div class="gallery"><img src="img/ssm-os-1.png" alt="Miss Social Studio — main dashboard"><div class="gallery-controls"><button class="gallery-prev" aria-label="Previous image">←</button><span class="gallery-count" aria-live="polite"></span><button class="gallery-next" aria-label="Next image">→</button><a class="full-image" target="_blank" rel="noopener" href="img/ssm-os-1.png">Open full image ↗</a></div></div><figure class="project-video"><video controls playsinline preload="none" poster="img/ssm-os-1.png" aria-label="Miss Social Studio system walkthrough" src="media/miss-social.mp4"></video><figcaption>Miss Social Studio system walkthrough</figcaption></figure></template></div></article><article data-gallery="[{&quot;src&quot;: &quot;img/raices-1.png&quot;, &quot;alt&quot;: &quot;Consultora Ra\u00edces \u2014 main dashboard&quot;}, {&quot;src&quot;: &quot;img/raices-2.png&quot;, &quot;alt&quot;: &quot;Consultora Ra\u00edces \u2014 cash flow&quot;}, {&quot;src&quot;: &quot;img/raices-3.png&quot;, &quot;alt&quot;: &quot;Consultora Ra\u00edces \u2014 TDR analysis&quot;}]" class="project" data-category="systems"><div class="video-cover"><img src="img/raices-1.png" alt="Consultora Raíces walkthrough" loading="lazy"><span>▶ Watch video</span></div><div class="copy"><div class="label">Consultora Raíces</div><span class="access">Internal · In development</span><h3>Consultancy management system</h3><p>An internal platform for managing opportunities, projects, tasks, team activity and cash flow for a consultancy in El Salvador.</p><p class="label">Strategy / UX/UI / Development</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Consultancy management system">View project ↗</button><template><div class="label">Consultora Raíces · Internal · In development</div><h2 id="project-title">Consultancy management system</h2><p class="dialog-description">The structure brings together daily priorities, projects that need attention, TDR analysis, an AI agent, cash flow, alerts and basic financial tracking.</p><p class="dialog-notice">Internal tool: access is restricted to protect company information. This portfolio presents the design and scope of the project.</p><div class="gallery"><img src="img/raices-1.png" alt="Consultora Raíces — main dashboard"><div class="gallery-controls"><button class="gallery-prev" aria-label="Previous image">←</button><span class="gallery-count" aria-live="polite"></span><button class="gallery-next" aria-label="Next image">→</button><a class="full-image" target="_blank" rel="noopener" href="img/raices-1.png">Open full image ↗</a></div></div><figure class="project-video"><video controls playsinline preload="none" poster="img/raices-1.png" aria-label="Consultora Raíces walkthrough" src="media/raices.mp4"></video><figcaption>Consultora Raíces walkthrough</figcaption></figure></template></div></article><article data-gallery="[]" class="project" data-category="systems"><div class="video-cover"><img src="img/iberclean-poster.png" alt="IberClean El Salvador attendance and HR tool walkthrough" loading="lazy"><span>▶ Watch video</span></div><div class="copy"><div class="label">IberClean El Salvador</div><span class="access">Internal · In development</span><h3>Attendance & HR system</h3><p>An attendance system in development to replace manual clock-in and clock-out workflows for internal teams.</p><p class="label">Strategy / UX/UI / Development</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Attendance & HR system">View project ↗</button><template><div class="label">IberClean El Salvador · Internal · In development</div><h2 id="project-title">Attendance & HR system</h2><p class="dialog-description">Implemented a clock-in and clock-out system with QR codes, employee photo capture and an HR dashboard. The information goes directly into a dashboard where the manager can review clock-ins, clock-outs, alerts and assigned roles for hundreds of employees, supporting faster decision-making.</p><p class="dialog-notice">Internal tool: access is restricted to protect company information. This portfolio presents the design and scope of the project.</p><figure class="project-video"><video controls playsinline preload="none" poster="img/iberclean-poster.png" aria-label="IberClean El Salvador attendance and HR tool walkthrough" src="media/iberclean.mp4"></video><figcaption>IberClean El Salvador attendance and HR tool walkthrough</figcaption></figure></template></div></article><article data-gallery="[]" class="project" data-category="systems"><div class="video-cover"><img src="img/corrib-educate-poster.jpg" alt="Corrib Educate website walkthrough" loading="lazy"><span>▶ Watch video</span></div><div class="copy"><div class="label">Corrib Educate</div><span class="access">Website · Under construction</span><h3>Corrib Educate web development</h3><p>A website under construction for an Irish company that organizes educational and cultural stays.</p><p class="label">Strategy / UX/UI / Development</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Corrib Educate web development">View project ↗</button><template><div class="label">Corrib Educate · Website · Under construction</div><h2 id="project-title">Corrib Educate web development</h2><p class="dialog-description">Corrib Educate brings groups from different parts of Europe to Ireland to learn English and experience local activities. I am working on a better digital presence and website experience so the company can communicate its offer clearly and book more stays through the website.</p><figure class="project-video"><video controls playsinline preload="none" poster="img/corrib-educate-poster.jpg" aria-label="Corrib Educate website walkthrough" src="media/corrib-educate.mp4"></video><figcaption>Corrib Educate website walkthrough</figcaption></figure></template></div></article><article data-gallery="[]" class="project" data-category="systems"><div class="video-cover"><img src="img/command-centre-poster.png" alt="Tech Studio Command Centre walkthrough" loading="lazy"><span>▶ Watch video</span></div><div class="copy"><div class="label">Tech Studio · Command Centre</div><span class="access">Internal tool</span><h3>Internal command centre</h3><p>An example of what an internal command centre could look like for a solo entrepreneur, a small business or a growing team.</p><p class="label">Strategy / UX/UI / Development</p><button class="project-open" aria-haspopup="dialog" aria-label="View project: Internal command centre">View project ↗</button><template><div class="label">Tech Studio · Command Centre · Internal tool</div><h2 id="project-title">Internal command centre</h2><p class="dialog-description">A walkthrough of Command Centre, the internal Tech Studio system. It shows how priorities, clients, tasks, projects and decisions can be brought into one operating tool.</p><p class="dialog-notice">Internal tool: access is restricted to protect company information. This portfolio presents the design and scope of the project.</p><figure class="project-video"><video controls playsinline preload="none" poster="img/command-centre-poster.png" aria-label="Tech Studio Command Centre walkthrough" src="media/command-centre.mp4"></video><figcaption>Tech Studio Command Centre walkthrough</figcaption></figure></template></div></article></div></div></section>
+<section id="studio" class="built"><div class="wrap"><div class="studio-band studio-band-text"><div><div class="studio-tag">My company · Business Systems Studio</div><div class="studio-heading"><img src="img/techstudio-logo-blue.png" alt="Tech Studio logo"><h2>Tech Studio</h2></div><p>I created Tech Studio to help businesses find operational clarity, integrate the right technology, and make better decisions. From dashboards and internal tools to workflows and automations, the goal is to make everyday work simpler and easier to manage.</p><div class="studio-points"><span>Operational clarity</span><span>Smart technology</span><span>Better decisions</span></div><p style="margin-top:18px"><a href="mailto:info@techstudiosv.com?subject=Tech%20Studio%20project">Talk to me about your business ↗</a></p></div></div></div></section>
+<section id="work"><div class="wrap"><div class="sec-eyebrow">How I work</div><h2>Strategy, product design and execution.</h2><p class="filter-intro">My experience spans strategy, operations, product design, business development, marketing, technology and AI. I bring those perspectives into the same project so the final solution makes sense for the business and the people using it.</p><div class="lens-grid"><div data-step="01"><h3>Understand</h3><p>Connect business goals with the day-to-day work. Find the problem worth solving and give it a clear direction.</p></div><div data-step="02"><h3>Design</h3><p>Turn requirements into structure, user flows and interfaces that make the next step clear.</p></div><div data-step="03"><h3>Make it happen</h3><p>Build practical tools, coordinate implementation, test the experience and use technology or AI where it helps the work move faster.</p></div></div></div></section>
+<section class="who" id="who"><div class="wrap"><div class="sec-eyebrow">Who I am</div><h2>Business-minded.<br>Product-minded. Tech-aware.</h2><p>I've worked across EdTech, construction and clean energy — connecting people, products and operations. Today, that multidisciplinary experience shapes the way I run Tech Studio and collaborate with other teams.</p><p>Bilingual in Spanish and English. Seven years in Ireland, now based in El Salvador and working with teams around the world.</p><div class="education"><div><h3>International Business</h3><p>Bachelor's · Galway Business School</p><p>2017–2021</p></div><div><h3>UX Design</h3><p>University College Dublin</p><p>2023–2024</p></div><div><h3>Digital Marketing</h3><p>Galway Technical Institute</p><p>2022</p></div></div></div></section>
+<section class="contact" id="contact"><div class="wrap"><div class="sec-eyebrow">Let's collaborate</div><h2>What are you working on?</h2><p>A business system, a digital product, or an operation that needs a clearer way forward.</p><div class="contact-btns"><a class="cbtn fill" href="mailto:info@techstudiosv.com?subject=Tech%20Studio%20collaboration&body=Hi%20Majo%2C%0A%0AI%20want%20to%20collaborate%20or%20I%20have%20a%20project%20we%20could%20work%20on.%0A%0A">Let's talk ↗</a><a class="cbtn blue-outline" href="https://www.linkedin.com/in/maria-menendez-5aaa69151">LinkedIn</a></div></div></section></main><footer>© <span id="yr">2026</span> María José Menéndez · Founder of Tech Studio</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();const filters=document.querySelectorAll('[data-filter]');const projects=document.querySelectorAll('[data-category]');filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));let count=0;projects.forEach(p=>{p.hidden=button.dataset.filter!=='all'&&!p.dataset.category.split(' ').includes(button.dataset.filter);if(!p.hidden)count++});document.querySelector('.project-count').textContent=count+' projects';}));</script><dialog class="project-dialog" aria-labelledby="project-title"><div class="dialog-bar"><span>Selected project</span><button class="dialog-close">Close ×</button></div><div class="dialog-content"></div></dialog><script>
+const dialog=document.querySelector('.project-dialog');let opener=null;let slides=[];let slideIndex=0;
+function showSlide(i){slideIndex=(i+slides.length)%slides.length;const img=dialog.querySelector('.gallery img');img.src=slides[slideIndex].src;img.alt=slides[slideIndex].alt;dialog.querySelector('.gallery-count').textContent=(slideIndex+1)+' / '+slides.length;dialog.querySelector('.full-image').href=img.src;}
+document.querySelectorAll('.project-open').forEach(button=>button.addEventListener('click',()=>{opener=button;const card=button.closest('.project');const body=dialog.querySelector('.dialog-content');body.replaceChildren(card.querySelector('template').content.cloneNode(true));dialog.querySelector('#project-title').textContent=card.querySelector('h3').textContent;slides=JSON.parse(card.dataset.gallery);if(slides.length){showSlide(0);dialog.querySelector('.gallery-prev').onclick=()=>showSlide(slideIndex-1);dialog.querySelector('.gallery-next').onclick=()=>showSlide(slideIndex+1);}dialog.showModal();document.body.style.overflow='hidden';dialog.scrollTop=0;dialog.querySelector('.dialog-close').focus();}));
+dialog.querySelector('.dialog-close').onclick=()=>dialog.close();dialog.addEventListener('close',()=>{dialog.querySelectorAll('video').forEach(v=>v.pause());document.body.style.overflow='';opener?.focus();});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});dialog.addEventListener('keydown',e=>{if(slides.length&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();showSlide(slideIndex+(e.key==='ArrowRight'?1:-1));}});
+</script><a class="whatsapp-float" href="https://wa.me/50375909198?text=Hi%20Majo%2C%20I%20want%20to%20collaborate%20or%20I%20have%20a%20project%20we%20could%20work%20on." target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.02 3.2A12.75 12.75 0 0 0 5.1 22.48L3.4 28.8l6.47-1.7a12.7 12.7 0 0 0 6.15 1.57h.01A12.74 12.74 0 0 0 16.02 3.2Zm0 23.32h-.01a10.57 10.57 0 0 1-5.39-1.47l-.39-.23-3.84 1.01 1.03-3.74-.25-.38A10.6 10.6 0 1 1 16.02 26.52Zm5.81-7.93c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.35-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64 0 1.56 1.14 3.07 1.3 3.28.16.21 2.24 3.42 5.43 4.8.76.33 1.35.53 1.81.68.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></a></body></html>
